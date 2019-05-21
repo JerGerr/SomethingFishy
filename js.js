@@ -34,20 +34,22 @@ $(document).ready(function () {
         var pressure
 
         function wdarrow(x) {
-            if (x >= 22.5 && x < 47.5) {
+            if (x >= 22.5) {
                 return '&#8601;';
-            } else if (x >= 47.5 && x < 112.5) {
+            } else if (x >= 47.5) {
                 return '&#8592;';
-            } else if (x >= 112.5 && x < 157.5) {
+            } else if (x >= 112.5) {
                 return '&#8598;';
-            } else if (x >= 157.5 && x < 202.5) {
+            } else if (x >= 157.5) {
                 return '&#8593;';
-            } else if (x >= 202.5 && x < 247.5) {
+            } else if (x >= 202.5) {
                 return '&#8599;';
-            } else if (x >= 247.5 && x < 292.5) {
+            } else if (x >= 247.5) {
                 return '&#8594';
-            } else if (x >= 292.5 && x < 337.5) {
+            } else if (x >= 292.5) {
                 return '&#8600;';
+            } else if (x >= 337.5) {
+                return '&#8595;';
             } else {
                 return '&#8595;';
             }
