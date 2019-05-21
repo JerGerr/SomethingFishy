@@ -37,11 +37,16 @@ span {
     margin-left: 2rem;
 }
 
-.windspeed {
+.attribute {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     justify-content: center;
 }
 
-.value {padding-left: 0.2rem;
+.value {
+    padding-left: 0.25rem;
+}
+
+.hd {
+    padding-right: 0.25rem;
 }

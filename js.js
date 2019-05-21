@@ -6,7 +6,7 @@ $(document).ready(function () {
     function success(pos) {
         var lat = pos.coords.latitude;
         var long = pos.coords.longitude;
-        weather(lat,long)
+        weather(lat, long)
     }
 
     function error() {
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
         var URL = `https://fcc-weather-api.glitch.me/api/current?lat=${lat}&lon=${long}`;
 
-        $.getJSON(URL, function(data) {
+        $.getJSON(URL, function (data) {
             console.log(data);
             updateDOM(data);
         });
@@ -29,11 +29,37 @@ $(document).ready(function () {
         var temp = Math.round(data.main.temp);
         var desc = data.weather[0].description;
         var icon = data.weather[0].icon;
+        var ws = Math.round(data.wind.speed);
+        var wd = data.wind.deg;
+        var pressure
+
+        function wdarrow(x) {
+            if (x >= 22.5 && x < 47.5) {
+                return '&#8601;';
+            } else if (x >= 47.5 && x < 112.5) {
+                return '&#8592;';
+            } else if (x >= 112.5 && x < 157.5) {
+                return '&#8598;';
+            } else if (x >= 157.5 && x < 202.5) {
+                return '&#8593;';
+            } else if (x >= 202.5 && x < 247.5) {
+                return '&#8599;';
+            } else if (x >= 247.5 && x < 292.5) {
+                return '&#8594';
+            } else if (x >= 292.5 && x < 337.5) {
+                return '&#8600;';
+            } else {
+                return '&#8595;';
+            }
+        }
+
+        var wda = wdarrow(wd);
 
         $('#city').html(city);
         $('#temp').html(temp);
         $('#desc').html(desc);
         $('#icon').attr('src', icon);
-
+        $('#ws').html(ws);
+        $('#wd').html(wda);
     }
 });
