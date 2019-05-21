@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='UTF-8'/>
-    <title>Something Fishy</title>
-    <link rel='stylesheet' href='styles.css'/>
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png"/>
-  </head>
-  <body>
-    <div class='page'>
-        <div class='section menu'></div>
-        <div class='section header'>
-          <img src='images/header.svg'/>
-        </div>
-        <div class='section content'>
-          <img src='images/content.svg'/>
-        </div>
-        <div class='section sign-up'>
-          <img src='images/sign-up.svg'/>
-        </div>
-        <div class='section feature-1'>
-          <img src='images/feature.svg'/>
-        </div>
-        <div class='section feature-2'>
-          <img src='images/feature.svg'/>
-        </div>
-        <div class='section feature-3'>
-          <img src='images/feature.svg'/>
-        </div>
+
+<head>
+  <meta charset='UTF-8' />
+  <link rel='stylesheet' href='styles.css' />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <title>Something Fishy</title>
+</head>
+
+<body>
+  <div class="bg-img">
+    <div class="container">
+      <div class="topnav">
+        <a href="#login">LogIn</a>
+        <a href="#gofish">GoFish</a>
+        <a href="#map">Map</a>
+        <a href="#catch">Catch History</a>
       </div>
-  </body>
+    </div>
+  </div>
+
+  <div class='page'>
+
+    <div class='section menu'></div>
+    <div class='section header' id="gofish">
+      <iframe src="https://cloud.google.com/vision/docs/drag-and-drop"></iframe> */
+      <img src='images/feature.svg' />
+
+      <img src='images/header.svg' />
+    </div>
+    <div class='section content' id="catch">
+      <img src='images/content.svg' />
+    </div>
+    <div class='section sign-up' id="map">
+      <img src='images/sign-up.svg' />
+    </div>
+    <div class='section feature-1'>
+      <h1>Personal Bests</h1>
+      <ol></ol>
+    </div>
+    <div class='section feature-2'>
+      <h1>Fisherman's friends</h1>
+      <ol></ol>
+      <img src='images/feature.svg' />
+    </div>
+    <div class='section feature-3'>
+      <h1>The Biggest Catch</h1>
+      <ol></ol>
+      <img src='images/feature.svg' />
+    </div>
+  </div>
+</body>
+
 </html>
