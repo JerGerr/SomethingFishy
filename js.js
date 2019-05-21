@@ -31,7 +31,8 @@ $(document).ready(function () {
         var icon = data.weather[0].icon;
         var ws = Math.round(data.wind.speed);
         var wd = data.wind.deg;
-        var pressure
+        var pressure = data.main.pressure;
+        var humidity = data.main.humidity;
 
         function wdarrow(x) {
             if (x >= 22.5) {
@@ -63,5 +64,7 @@ $(document).ready(function () {
         $('#icon').attr('src', icon);
         $('#ws').html(ws);
         $('#wd').html(wda);
+        $('#pressure').html(pressure);
+        $('#humidity').html(humidity);
     }
 });
