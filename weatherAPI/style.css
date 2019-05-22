@@ -1,0 +1,52 @@
+h1, h2, h3 , span {
+    margin: 0;
+}
+
+h1 {
+    font-size: 15rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+span {
+    font-size: 6rem;
+}
+
+
+.container {
+    max-width: 550px;
+    height:  100vh;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    text-align: center;
+    padding: 25px 5px;
+}
+
+.degrees {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.attribute {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.value {
+    padding-left: 0.25rem;
+}
+
+.hd {
+    padding-right: 0.25rem;
+}
