@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .logo-pic {
@@ -15,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     opacity: 0.9;
-    background-color: grey;
+    background-color: #D8DBE2;
     height: 8vh;
     width: 100%;
     z-index: 1;
@@ -43,9 +44,6 @@ body {
 }
 
 .box2 {
-    background-image: url("loopingwater.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
     grid-column: 1/4;
     grid-row: 1/4;
     display: grid;
@@ -65,8 +63,9 @@ body {
 }
 
 .weather-app {
+    text-transform: capitalize;
     padding: 2em 3em;
-    background: rgba(128, 128, 128, 0.2);
+    background: rgba(79, 93, 117, 0.6);
     text-align: center;
     color: white;
     grid-column: 1/4;
@@ -107,16 +106,31 @@ form,
 }
 
 .box4 {
+    background-color:rgb(79, 93, 117);
+    margin-top: 4em;
     grid-column: 1/4;
     grid-row: 5;
     display: grid;
     grid-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
+    height: 110%;
+}
+
+.summary-header {
+    color: white;
+    grid-column: 1/4;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    padding-bottom: 1em;
 }
 
 .summary {
-    background-color: aqua;
-    height: 200px;
+    background-color: #A9BCD0;
+    text-align: center;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
 }
 
 .box5 {
@@ -124,8 +138,6 @@ form,
     grid-row: 6;
     height: auto;
 }
-
-
 
 .weather{
     display: grid;
@@ -145,3 +157,30 @@ form,
     justify-content: center;
 }
 
+.parallax { 
+    background-image: url("loopingwater.gif");
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #lowercase {
+      text-transform: lowercase;
+  }
+
+  @media screen and (min-width: 770px) {
+
+    .wrapper>div {
+        padding: 1em 10em;
+    }
+    
+  }
+  @media screen and (min-width: 1080px) {
+
+    .wrapper>div {
+        padding: 1em 15em;
+    }
+    
+  }

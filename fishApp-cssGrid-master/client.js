@@ -3,6 +3,11 @@ const logCatchButton = document.querySelector('.logCatchButton');
 const fishesContainer = document.querySelector('.fishesContainer');
 const niceCatchPic = document.querySelector('.catchPic');
 const API_URL = "http://localhost:5000/fishes";
+const summary1 = document.querySelector('.summary1');
+const summary2 = document.querySelector('.summary2');
+const summary3 = document.querySelector('.summary3');
+
+var username;
 
 form.style.display = '';
 
@@ -20,7 +25,7 @@ logCatchButton.addEventListener('click', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const username = formData.get('username');
+    username = formData.get('username');
     const fishtype = formData.get('fishtype');
     const weight = formData.get('weight');
     
@@ -40,11 +45,12 @@ form.addEventListener('submit', (event) => {
         }
     }).then(response => response.json())
     .then(createdFish => {
-        console.log(createdFish);
+        console.log(createdFish);        
         form.style.display = 'none';
         form.reset();
         fishesContainer.innerHTML = '';
-        listAllFish(); 
+        listAllFish();
+        getSummary();
     });
 });
 
@@ -80,3 +86,47 @@ function listAllFish() {
             
         });
 }
+
+
+// get summaries for username
+function getSummary() {
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(fishes => {
+            // push all elements with 'username' to new array and update summary1
+            const newArray = []; 
+            for(let i=0; i<fishes.length; i++){
+                if(fishes[i].username === username){
+                    newArray.push(fishes[i]);
+                }
+            }   
+            console.log(newArray); 
+            summary1.innerHTML = "TOTAL CATCHES:<br><br>"+newArray.length;
+
+            // find heaviest catch from newArray and update summary2
+            var heaviestCatch = newArray[0].weight;
+            for(let i=0; i<newArray.length; i++){
+                if(newArray[i].weight > heaviestCatch){
+                    heaviestCatch = newArray[i].weight;
+                }
+            }
+            console.log(heaviestCatch);
+            summary2.innerHTML = "BEST CATCH:<br><br>"+heaviestCatch+"KG";
+
+            // find most common fish and update to summary3
+            const fishesArray = [];
+            for(let i=0; i<newArray.length; i++){
+                fishesArray.push(newArray[i].fishtype);
+            }
+            console.log(fishesArray);
+            function mode(arr){
+                return arr.sort((a,b) =>
+                      arr.filter(v => v===a).length
+                    - arr.filter(v => v===b).length
+                ).pop();
+            }
+            const mostCommonFish = mode(fishesArray);
+            summary3.innerHTML = "MOST COMMON FISH:<br><br>"+mostCommonFish;
+        })
+}
+
