@@ -41,6 +41,8 @@ body {
     grid-column: 1/4;
     grid-row: 0;
     height: 10vh;
+    color: white;
+    padding-top: 2em;
 }
 
 .box2 {
