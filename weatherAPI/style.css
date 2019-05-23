@@ -19,7 +19,7 @@ span {
 }
 
 
-.container {
+.weathercont {
     max-width: 550px;
     height:  100vh;
     border: 1px solid black;
@@ -50,3 +50,4 @@ span {
 .hd {
     padding-right: 0.25rem;
 }
+
