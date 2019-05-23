@@ -115,7 +115,8 @@ form,
 
 .summary {
     background-color: aqua;
-    height: 200px;
+    text-align: center;
+    padding: 1em;
 }
 
 .box5 {

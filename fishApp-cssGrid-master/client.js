@@ -3,6 +3,8 @@ const logCatchButton = document.querySelector('.logCatchButton');
 const fishesContainer = document.querySelector('.fishesContainer');
 const niceCatchPic = document.querySelector('.catchPic');
 const API_URL = "http://localhost:5000/fishes";
+const summary1 = document.querySelector('.summary1');
+var username;
 
 form.style.display = '';
 
@@ -20,7 +22,7 @@ logCatchButton.addEventListener('click', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const username = formData.get('username');
+    username = formData.get('username');
     const fishtype = formData.get('fishtype');
     const weight = formData.get('weight');
     
@@ -40,11 +42,12 @@ form.addEventListener('submit', (event) => {
         }
     }).then(response => response.json())
     .then(createdFish => {
-        console.log(createdFish);
+        console.log(createdFish);        
         form.style.display = 'none';
         form.reset();
         fishesContainer.innerHTML = '';
-        listAllFish(); 
+        listAllFish();
+        getSummary();
     });
 });
 
@@ -80,3 +83,21 @@ function listAllFish() {
             
         });
 }
+
+
+// get summaries for username
+function getSummary() {
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(fishes => {
+            const newArray = []; 
+            for(let i=0; i<fishes.length; i++){
+                if(fishes[i].username === username){
+                    newArray.push(fishes[i]);
+                }
+            }   
+            console.log(newArray.length); 
+            summary1.innerHTML = "TOTAL CATCHES:<br><br>"+newArray.length;
+        })
+}
+
