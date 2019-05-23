@@ -66,14 +66,15 @@ body {
 }
 
 .weather-app {
-    padding: 3em;
-    background: rgba(200, 54, 54, 0.2);
+    padding: 2em 3em;
+    background: rgba(128, 128, 128, 0.2);
     text-align: center;
     color: white;
     grid-column: 1/4;
     grid-row: 2/3;
     justify-self: center;
-    align-self: center;
+    align-self: start;
+    
 }
 
 .day {
@@ -131,3 +132,24 @@ form,
     grid-row: 6;
     height: auto;
 }
+
+
+
+.weather{
+    display: grid;
+    grid-template-rows: 20% 80%;
+    text-align: center;
+}
+
+.degrees {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.attribute {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    justify-content: center;
+}
+
