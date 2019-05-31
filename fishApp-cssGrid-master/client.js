@@ -101,7 +101,7 @@ function getSummary() {
                 }
             }   
             console.log(newArray); 
-            summary1.innerHTML = "TOTAL CATCHES:<br><br>"+newArray.length;
+            summary1.innerHTML = "Total:<br><br>"+newArray.length;
 
             // find heaviest catch from newArray and update summary2
             var heaviestCatch = newArray[0].weight;
@@ -111,7 +111,7 @@ function getSummary() {
                 }
             }
             console.log(heaviestCatch);
-            summary2.innerHTML = "BEST CATCH:<br><br>"+heaviestCatch+"KG";
+            summary2.innerHTML = "Biggest:<br><br>"+heaviestCatch+"KG";
 
             // find most common fish and update to summary3
             const fishesArray = [];
@@ -126,7 +126,7 @@ function getSummary() {
                 ).pop();
             }
             const mostCommonFish = mode(fishesArray);
-            summary3.innerHTML = "MOST COMMON FISH:<br><br>"+mostCommonFish;
+            summary3.innerHTML = "Most:<br><br>"+mostCommonFish;
         })
 }
 

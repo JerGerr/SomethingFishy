@@ -133,7 +133,8 @@ form,
     text-align: center;
     padding: 1em;
     color: white;
-    font-weight: bold;
+    margin-bottom: 4em;
+    font-size: 2em;
 }
 
 .box5 {
@@ -175,7 +176,7 @@ form,
 }
 
 .quote {
-    padding: 2em 0 2em 0;
+    padding: 6em 0 2em 0;
     align-content: center;
     text-align: center;
 }
